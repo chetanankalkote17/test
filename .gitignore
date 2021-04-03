@@ -6,7 +6,7 @@
 
 # BlueJ files
 *.ctxt
-*.exe
+chromedriver.exe
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
