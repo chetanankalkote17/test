@@ -12,6 +12,6 @@ Feature: Automation testing Web Site  Check
     
 @contactus
 Scenario: user is able to open website,click on contact us option
-Given User opened url
+Given User redirected to  url
 When   User click on contact us button
 Then   Contact us page is displayed
