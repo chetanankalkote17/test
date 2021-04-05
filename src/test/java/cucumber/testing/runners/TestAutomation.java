@@ -10,7 +10,7 @@ import io.cucumber.junit.CucumberOptions;
 (
 		features="classpath:features",
 		glue="cucumber.test.stepdefinations",
-		tags="@contactus",
+		tags="",
 		plugin= {"pretty",
 				"html:target/html/htmlreport.html",
 				"json:target/json/file.json",
