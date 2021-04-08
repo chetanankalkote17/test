@@ -1,5 +1,7 @@
 package cucumber.test.stepdefinations;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
@@ -102,10 +104,83 @@ public class UsingHook1 {
 	}
 
 	
+	@When("User click in facebook icon")
+	public void user_click_in_facebook_icon() {
+		
+		LandingPageObject.clickForFacebook();
+	}
+
+
 	
+
+	@Then("facebook page is displayed")
+	public void facebook_page_is_displayed() {
+	    
+		LandingPageObject.windowhandling(2);
+		String facebookExpectedTilte="Selenium Framework";
+		LandingPageObject.validatePageTilte(facebookExpectedTilte, driver.getTitle());
+		driver.close();
+		LandingPageObject.windowhandling(1);
+	}
+
+	@When("User click on twitter icon")
+	public void user_click_on_twitter_icon() {
+		LandingPageObject.clickForTwitter();
+	}
+
+
 	
+
+	@Then("twitter page is displayed")
+	public void twitter_page_is_displayed()   {
+	   
+	   	LandingPageObject.windowhandling(2);
+		//System.out.println("twitter page title is "   +     driver.getTitle());
+		String twitterExpectedTitle=""; //Selenium Framework (@seleniumfrmwrk) / Twitter
+		
+		LandingPageObject.validatePageTilte(twitterExpectedTitle, driver.getTitle());
+		driver.close();
+		LandingPageObject.windowhandling(1);
+	}
+
+	@When("User click on youtube icon")
+	public void user_click_on_youtube_icon() {
+	   
+		LandingPageObject.clickForYoutube();
+	}
+
+
 	
+
+	@Then("youtube page is displayed")
+	public void youtube_page_is_displayed() {
+		LandingPageObject.windowhandling(2);
+		String expectedYoutubeTitle="Selenium Framework - YouTube";
+		LandingPageObject.validatePageTilte(expectedYoutubeTitle, driver.getTitle());
+		driver.close();
+		LandingPageObject.windowhandling(1);
+		
+	}
+
+	@When("User click on googleplus icon")
+	public void user_click_on_googleplus_icon() {
+	   
+		LandingPageObject.clickForGooglePlus();
+	}
+
+
 	
+
+	@Then("googleplus page is displayed")
+	public void googleplus_page_is_displayed() {
+	    
+		LandingPageObject.windowhandling(2);
+		String expectedGooglePlusTitle="Sign in – Google accounts";
+		LandingPageObject.validatePageTilte(expectedGooglePlusTitle, driver.getTitle());
+		driver.close();
+		LandingPageObject.windowhandling(1);
+	}
+
 
 	@After(order=1)
 	public void after_scenario()
